@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TTNSDHSS Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom right, #f2f2f2, #d9d9d9);
+      text-align: center;
+    }
+
+    header {
+      background: #333;
+      color: white;
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .menu {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* 🔹 Side Menu Style */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 200px;
+      height: 100%;
+      background: #222;
+      color: white;
+      padding-top: 60px;
+      transition: 0.4s;
+    }
+
+    .side-menu ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .side-menu li {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .side-menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .side-menu.show {
+      left: 0;
+    }
+
+    /* Welcome Text */
+    .welcome {
+      margin-top: 80px;
+      font-size: 22px;
+      color: #222;
+    }
+
+    .sub {
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    TTNSDHSS Website
+    <span class="menu" onclick="toggleMenu()">☰</span>
+  </header>
+
+  <!-- 🔹 Side Menu -->
+  <nav class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="#">🏠 Home</a></li>
+      <li><a href="#">📘 About</a></li>
+      <li><a href="#">📰 News</a></li>
+      <li><a href="#">📞 Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="welcome">
+    <h2>Welcome to TTNSDHSS</h2>
+    <p class="sub">Please Follow – TTNSDHSS Website</p>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("sideMenu").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
