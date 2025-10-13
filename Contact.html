@@ -1,148 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalvi Vaanam</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Kalvi Vaanam</title>
 
-        nav {
-            background-color: #2c3e50;
-            padding: 10px 20px;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #a8e6ff, #e0f7ff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
 
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
+    .contact-container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 0.8s ease;
+    }
 
-        nav ul li {
-            margin-right: 20px;
-        }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    h2 {
+      margin-bottom: 20px;
+      color: #0077b6;
+      font-weight: 600;
+    }
 
-        section {
-            padding: 60px 20px;
-        }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
 
-        /* Contact Section Styling */
-        #contact {
-            background-color: #ecf0f1;
-        }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #bcdffb;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+      transition: all 0.3s ease;
+      background-color: #f8fbff;
+    }
 
-        #contact h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    input:focus, textarea:focus {
+      border-color: #00b4d8;
+      box-shadow: 0 0 8px #90e0ef;
+      background-color: #ffffff;
+    }
 
-        #contact form {
-            max-width: 500px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-        }
+    button {
+      background-color: #00b4d8;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-        #contact form input,
-        #contact form textarea {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #bdc3c7;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+    button:hover {
+      background-color: #0096c7;
+      transform: scale(1.03);
+    }
 
-        #contact form button {
-            padding: 10px;
-            background-color: #2980b9;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+    #thankyou {
+      display: none;
+      color: #009432;
+      margin-top: 15px;
+      font-weight: bold;
+    }
 
-        #contact form button:hover {
-            background-color: #3498db;
-        }
+    /* 🔹 Simple Close Button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #0077b6;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-        /* Thank You Message */
-        #thankyou {
-            display: none;
-            text-align: center;
-            margin-top: 20px;
-            color: green;
-            font-weight: bold;
-        }
-    </style>
+    .close-btn:hover {
+      color: #0096c7;
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Navigation Menu -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <!-- 🔹 Simple Close Button -->
+  <button class="close-btn" onclick="goHome()">×</button>
 
-    <!-- Home Section -->
-    <section id="home">
-        <h1>Welcome to Kalvi Vaanam</h1>
-        <p>Learn without limits!</p>
-    </section>
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <form id="contact-form" action="https://formspree.io/f/mvgwvoer" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="thankyou">✅ Your message has been sent successfully. Thank you!</p>
+  </div>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contact-form" action="https://formspree.io/f/mvgwvoer" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <p id="thankyou">உங்கள் செய்தி அனுப்பப்பட்டது. நன்றி!</p>
-    </section>
+  <script>
+    // 🔹 Close button → redirect to home page
+    function goHome() {
+      window.location.href = "index.html"; // Change to your homepage file name if different
+    }
 
-    <script>
-        // Form submit ஆன பிறகு Thank You message காட்ட
-        const form = document.getElementById('contact-form');
-        const thankYou = document.getElementById('thankyou');
+    // 🔹 Form submit → show thank you message
+    const form = document.getElementById('contact-form');
+    const thankYou = document.getElementById('thankyou');
 
-        form.addEventListener('submit', function(e){
-            e.preventDefault(); // default submit action stop
-            const action = form.getAttribute('action');
-            const formData = new FormData(form);
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const action = form.getAttribute('action');
+      const formData = new FormData(form);
 
-            fetch(action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    form.style.display = 'none';
-                    thankYou.style.display = 'block';
-                } else {
-                    alert('Something went wrong. Please try again.');
-                }
-            }).catch(error => {
-                alert('Something went wrong. Please try again.');
-            });
-        });
-    </script>
+      fetch(action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          form.style.display = 'none';
+          thankYou.style.display = 'block';
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      }).catch(error => {
+        alert('Something went wrong. Please try again.');
+      });
+    });
+  </script>
 
 </body>
 </html>
