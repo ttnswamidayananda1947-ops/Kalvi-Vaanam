@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitemap - Kalvi Vaanam</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #a8e6ff, #e0f7ff);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    h2 {
+      color: #0077b6;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    a {
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #0096c7;
+      text-decoration: underline;
+    }
+
+    /* 🔹 Close Button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #0077b6;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close-btn:hover {
+      color: #0096c7;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <button class="close-btn" onclick="goHome()">×</button>
+
+  <div class="container">
+    <h2>🌐 Website Sitemap</h2>
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="about.html">📘 About</a></li>
+      <li><a href="contact.html">✉️ Contact</a></li>
+      <li><a href="policy.html">📜 Policy</a></li>
+      <li><a href="terms.html">⚖️ Terms & Conditions</a></li>
+    </ul>
+  </div>
+
+  <script>
+    function goHome() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
