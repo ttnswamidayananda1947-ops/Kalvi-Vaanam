@@ -6,184 +6,208 @@
   <title>Kalvi Vaanam</title>
 
   <style>
-    :root{
-      --accent:#1565c0; /* main name color */
-      --white:#ffffff;
-      --text:#222;
+    :root {
+      --accent: #009dff;
+      --white: #ffffff;
+      --text: #222;
+      --sky-light: #e0f7ff;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{background:var(--white);font-family:'Poppins',Arial,Helvetica,sans-serif;color:var(--text)}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--sky-light);
+      font-family: "Poppins", Arial, Helvetica, sans-serif;
+      color: var(--text);
+    }
 
     /* Header */
-    header{
-      height:90px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      border-bottom:1px solid rgba(0,0,0,0.08);
-      background:var(--white);
+    header {
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-bottom: 2px solid rgba(0, 157, 255, 0.4);
+      background: linear-gradient(90deg, #a1e3ff, #d7f3ff);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* Site name bold + color */
-    .sitename{
-      font-size:30px;
-      font-weight:900;
-      color:var(--accent);
-      letter-spacing:1px;
-      text-align:center;
-      line-height:1.2;
+    .sitename {
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: 1px;
+      text-align: center;
+      line-height: 1.2;
     }
 
-.subtitle{
-  font-size:13px;
-  color:#555;
-  margin-bottom:4px;
-  text-align:center;
-}
-
-    /* Menu icon on right side */
-    .menu-icon{
-      position:absolute;
-      right:18px;
-      top:50%;
-      transform:translateY(-50%);
-      font-size:28px;
-      cursor:pointer;
-      user-select:none;
+    .subtitle {
+      font-size: 13px;
+      color: #333;
+      margin-bottom: 4px;
+      text-align: center;
     }
 
-    /* SIDE OVERLAY — full white, slides from left */
-    .side-overlay{
-      position:fixed;
-      top:0; left:-100%;
-      width:100%;
-      height:100%;
-      background:var(--white);
-      z-index:9999;
-      transition:left .3s ease;
-      display:flex;
-      flex-direction:column;
-      padding:28px;
-    }
-    .side-overlay.open{left:0;}
-
-    /* Close X */
-    .side-close{
-      align-self:flex-end;
-      font-size:26px;
-      cursor:pointer;
-      color:#333;
-      margin-bottom:8px;
+    .menu-icon {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--accent);
+      user-select: none;
     }
 
-    /* Menu list */
-    .side-list{
-      margin-top:40px;
-      display:flex;
-      flex-direction:column;
-      gap:20px;
-      align-items:center;
+    /* Side Overlay */
+    .side-overlay {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--white);
+      z-index: 9999;
+      transition: left 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      padding: 28px;
+      box-shadow: inset 0 0 15px rgba(0, 157, 255, 0.1);
     }
 
-    .side-list a{
-      text-decoration:none;
-      color:var(--text);
-      font-size:22px;
-      font-weight:600;
-      padding:10px 30px;
-      border-radius:8px;
-    }
-    .side-list a:hover{
-      background:rgba(0,0,0,0.05);
+    .side-overlay.open {
+      left: 0;
     }
 
-    .header-underline{
-      position:absolute;
-      bottom:8px;
-      left:50%;
-      transform:translateX(-50%);
-      width:120px;
-      height:4px;
-      background:var(--accent);
-      border-radius:2px;
+    .side-close {
+      align-self: flex-end;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-weight: bold;
     }
 
-    /* Center text after header */
-    main{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      min-height:calc(100vh - 90px);
-      text-align:center;
+    .side-list {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .side-list a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 22px;
+      font-weight: 600;
+      padding: 10px 30px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .side-list a:hover {
+      background: rgba(0, 157, 255, 0.1);
+      color: var(--accent);
+    }
+
+    .header-underline {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    main {
+      min-height: calc(100vh - 90px);
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(90deg, #00b4d8, #90e0ef);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 40px;
+      font-family: 'Poppins', sans-serif;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
- <header>
-  <div>
-    <div class="subtitle">வானத்திற்கு எல்லை இல்லை, அதுபோன்று கல்விக்கும் எல்லை இல்லை</div>
-    <div class="sitename">KALVI VAANAM</div>
-  </div>
-  <div class="menu-icon" id="menuBtn">三</div>
-  <div class="header-underline"></div>
-</header>
+  <header>
+    <div>
+      <div class="subtitle">வானத்திற்கு எல்லை இல்லை, அதுபோன்று கல்விக்கும் எல்லை இல்லை</div>
+      <div class="sitename">KALVI VAANAM</div>
+    </div>
+    <div class="menu-icon" id="menuBtn">三</div>
+    <div class="header-underline"></div>
+  </header>
 
   <main></main>
 
+  <!-- Side Menu -->
   <aside class="side-overlay" id="sideOverlay">
     <div class="side-close" id="sideClose">×</div>
     <nav class="side-list">
-      <a href="#">Home</a>
-      <a href="#">Courses</a>
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
       <a href="about.html">About</a>
-      <a href="Contact.html">Contact</a>
+      <a href="contact.html">Contact</a>
       <a href="sitemap.html">Sitemap</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms & Conditions</a>
-      
-      
     </nav>
   </aside>
 
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const side = document.getElementById('sideOverlay');
-    const sideClose = document.getElementById('sideClose');
+  <footer>
+    <p style="margin: 0; font-weight: 500;">© 2025 Kalvi Vaanam</p>
+    <p style="margin: 10px 0;">
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="sitemap.html">Sitemap</a> |
+      <a href="terms.html">Terms & Conditions</a> |
+      <a href="privacy.html">Privacy Policy</a>
+    </p>
+  </footer>
 
-    menuBtn.addEventListener('click', ()=> side.classList.add('open'));
-    sideClose.addEventListener('click', ()=> side.classList.remove('open'));
-    side.addEventListener('click', (e)=>{
-      if(e.target===side) side.classList.remove('open');
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const side = document.getElementById("sideOverlay");
+    const sideClose = document.getElementById("sideClose");
+
+    menuBtn.addEventListener("click", () => side.classList.add("open"));
+    sideClose.addEventListener("click", () => side.classList.remove("open"));
+    side.addEventListener("click", (e) => {
+      if (e.target === side) side.classList.remove("open");
     });
-    document.addEventListener('keydown', e=>{
-      if(e.key==='Escape') s>ide.classList.remove('open');
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") side.classList.remove("open");
     });
   </script>
-  <footer style="
-  background: linear-gradient(90deg, #00b4d8, #90e0ef);
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-  margin-top: 40px;
-  font-family: 'Poppins', sans-serif;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  box-shadow: 0 -3px 10px rgba(0,0,0,0.15);
-">
-  <p style="margin: 0; font-weight: 500;">© 2025 Kalvi Vaanam</p>
-  <p style="margin: 10px 0;">
-    <a href="index.html" style="color:white; text-decoration:none; margin:0 10px; font-weight:500;">Home</a> |
-    <a href="about.html" style="color:white; text-decoration:none; margin:0 10px; font-weight:500;">About</a> |
-    <a href="Contact.html" style="color:white; text-decoration:none; margin:0 10px; font-weight:500;">Contact</a>
-    <a href="sitemap.html">Sitemap</a>
-    <a href="terms.html">Terms & Conditions</a>
-    <a href="privacy.html">Privacy Policy</a>
-    
-  </p>
-</footer>
 </body>
 </html>
