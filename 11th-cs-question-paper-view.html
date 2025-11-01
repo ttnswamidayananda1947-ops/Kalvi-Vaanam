@@ -1,98 +1,98 @@
-<!DOCTYPE html>  
-<html lang="ta">  
-<head>  
-  <meta charset="UTF-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>Preview & Download | 11th Computer Science</title>  
-  <style>  
-    body {  
-      font-family: "Poppins", sans-serif;  
-      background: #ffffff;  
-      color: #003366;  
-      text-align: center;  
-      padding: 30px;  
-    }  
-  
-    h1 {  
-      font-size: 1.6rem;  
-      color: #004b8d;  
-      margin-bottom: 20px;  
-    }  
-  
-    .button-group {  
-      margin-bottom: 20px;  
-    }  
-  
-    .btn {  
-      background: #87cefa;  
-      color: #003366;  
-      border: none;  
-      padding: 10px 22px;  
-      font-size: 1rem;  
-      font-weight: bold;  
-      border-radius: 10px;  
-      cursor: pointer;  
-      transition: 0.3s;  
-      margin: 8px;  
-      text-decoration: none;  
-      display: inline-block;  
-    }  
-  
-    .btn:hover {  
-      background: #4aa3f7;  
-      transform: scale(1.05);  
-    }  
-  
-    .download-btn {  
-      background: #004b8d;  
-      color: white;  
-    }  
-  
-    .download-btn:hover {  
-      background: #006ad1;  
-    }  
-  
-    .preview-box {  
-      display: none;  
-      justify-content: center;  
-      align-items: center;  
-      flex-direction: column;  
-      animation: fadeIn 0.5s ease;  
-      margin-top: 20px;  
-    }  
-  
-    .preview-box img {  
-      width: 80%;  
-      max-width: 600px;  
-      border-radius: 15px;  
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  
-    }  
-  
-    @keyframes fadeIn {  
-      from { opacity: 0; transform: scale(0.9); }  
-      to { opacity: 1; transform: scale(1); }  
-    }  
-  </style>  
-</head>  
-<body>  
-  
-  <h1>📘 11th Computer Science - Question Paper</h1>  
-  
-  <div class="button-group">  
-    <button class="btn" onclick="showPreview()">👀 Preview</button>  
-    <a href="PDFS/11th/Computer-Science/Question-Papers/11th_Computer-science_Quarterly_Public_Examination_2025.pdf" class="btn download-btn" download>⬇️ Download PDF</a>  
-  </div>  
-  
-  <div class="preview-box" id="previewBox">  
-    <img src="PDFS/11th/Computer-Science/Question-Papers/11th_Computer-science_Quarterly_Public_Examination_2025.jpg" alt="Question Paper Preview">  
-  </div>  
-  
-  <script>  
-    function showPreview() {  
-      const box = document.getElementById('previewBox');  
-      box.style.display = 'flex';  
-    }  
-  </script>  
-  
-</body>  
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview & Download | 11th Computer Science</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #ffffff;
+      color: #003366;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      color: #004b8d;
+      margin-bottom: 20px;
+    }
+
+    .button-group {
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: #87cefa;
+      color: #003366;
+      border: none;
+      padding: 10px 22px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin: 8px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #4aa3f7;
+      transform: scale(1.05);
+    }
+
+    .download-btn {
+      background: #004b8d;
+      color: white;
+    }
+
+    .download-btn:hover {
+      background: #006ad1;
+    }
+
+    .preview-box {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      animation: fadeIn 0.5s ease;
+      margin-top: 20px;
+    }
+
+    iframe {
+      width: 90%;
+      height: 600px;
+      border: 2px solid #004b8d;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📘 11th Computer Science - Quarterly Public Exam (2025)</h1>
+
+  <div class="button-group">
+    <button class="btn" onclick="showPreview()">👁️ Preview</button>
+    <a href="PDFS/11th/Computer-Science/Question-Papers/11th_Computer science Quarterly Public Examination 2025.pdf" class="btn download-btn" download>⬇️ Download PDF</a>
+  </div>
+
+  <div class="preview-box" id="previewBox">
+    <iframe src="PDFS/11th/Computer-Science/Question-Papers/11th_Computer science Quarterly Public Examination 2025.pdf"></iframe>
+  </div>
+
+  <script>
+    function showPreview() {
+      document.getElementById('previewBox').style.display = 'flex';
+    }
+  </script>
+
+</body>
 </html>
