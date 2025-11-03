@@ -1,65 +1,82 @@
-<!DOCTYPE html>    
-<html lang="ta">    
-<head>    
-  <meta charset="UTF-8">    
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-  <title>C++ Beginner Course</title>    
-  <style>    
-    body {    
-      margin: 0;    
-      font-family: "Poppins", sans-serif;    
-      background: linear-gradient(180deg, #e3f2fd, #ffffff);    
-      display: flex;    
-      flex-direction: column;    
-      justify-content: center;    
-      align-items: center;    
-      height: 100vh;    
-      text-align: center;    
-    }    
-    
-    h1 {    
-      color: #0078ff;    
-      font-size: 2.2rem;    
-      margin-bottom: 10px;    
-    }    
-    
-    p {    
-      color: #444;    
-      font-size: 1.1rem;    
-      margin-bottom: 30px;    
-    }    
-    
-    .btn {    
-      display: inline-block;    
-      background: #0078ff;    
-      color: white;    
-      padding: 12px 28px;    
-      border-radius: 8px;    
-      text-decoration: none;    
-      font-weight: bold;    
-      font-size: 1rem;    
-      transition: 0.3s;    
-    }    
-    
-    .btn:hover {    
-      background: #005fcc;    
-    }    
-    
-    footer {    
-      position: absolute;    
-      bottom: 15px;    
-      color: #777;    
-      font-size: 14px;    
-    }    
-  </style>    
-</head>    
-<body>    
-    
-  <h1>Welcome to C++ Beginner Course 🎓</h1>    
-  <p>by Kalvi Vaanam</p>    
-  <a href="lessons/intro.html" class="btn">Let's Start 👉</a>    
-    
-  <footer>© 2025 Kalvi Vaanam</footer>    
-    
-</body>    
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ அறிமுகம் - Lesson 1</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:"Poppins",sans-serif;background:#f9f9ff;overflow-x:hidden;}
+    header{background:linear-gradient(90deg,#16a085,#1abc9c);color:white;display:flex;justify-content:space-between;align-items:center;
+      padding:12px 18px;box-shadow:0 2px 6px rgba(0,0,0,0.1);position:fixed;top:0;width:100%;z-index:10;}
+    .menu-icon{font-size:1.6rem;cursor:pointer;}
+    .title{font-weight:600;font-size:1.2rem;letter-spacing:0.5px;}
+    .sidebar{position:fixed;top:0;left:-260px;width:260px;height:100%;background:white;box-shadow:2px 0 10px rgba(0,0,0,0.15);
+      transition:0.4s;z-index:20;padding-top:60px;border-top-right-radius:15px;}
+    .sidebar.active{left:0;}
+    .sidebar ul{list-style:none;}
+    .sidebar li{padding:14px 22px;border-bottom:1px solid #eee;}
+    .sidebar a{text-decoration:none;color:#333;font-weight:500;display:block;transition:0.3s;}
+    .sidebar a:hover{color:#1abc9c;transform:translateX(5px);}
+    .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.3);opacity:0;visibility:hidden;transition:0.4s;z-index:15;}
+    .overlay.active{opacity:1;visibility:visible;}
+    main{margin-top:75px;padding:20px;text-align:left;max-width:700px;margin-left:auto;margin-right:auto;}
+    h2{color:#0078ff;margin-bottom:15px;}
+    p{color:#444;margin-bottom:20px;line-height:1.6;}
+    .example-box{background:#f3fff8;border-left:5px solid #1abc9c;padding:15px;margin:20px 0;font-family:monospace;
+      white-space:pre-wrap;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.05);}
+    .nav-btns{display:flex;justify-content:space-between;margin-top:30px;}
+    .btn{background:#1abc9c;color:white;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:bold;transition:0.3s;}
+    .btn:hover{background:#16a085;}
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header>
+    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    <span class="title">Lesson 1 - C++ அறிமுகம்</span>
+  </header>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="#">Lesson 1 - C++ அறிமுகம்</a></li>
+      <li><a href="intro2.html">Lesson 2 - ஏன் C++ கற்றுக்கொள்ள வேண்டும்?</a></li>
+    </ul>
+  </div>
+
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+  <main>
+    <h2>C++ என்றால் என்ன?</h2>
+    <p>
+      C++ என்பது ஒரு சக்திவாய்ந்த Programming Language. இது C மொழியின் மேம்பட்ட வடிவமாக உருவாக்கப்பட்டது.  
+      இதில் Object-Oriented Programming (OOP) கொள்கைகள் உள்ளன — அதாவது classes, objects, inheritance, polymorphism போன்றவைகள்.  
+      இதனால் பெரிய அளவிலான software, games, operating systems ஆகியவற்றை உருவாக்க இது பெரிதும் பயன்படுத்தப்படுகிறது.
+    </p>
+
+    <div class="example-box">
+📘 முக்கிய குறிப்பு:  
+இந்தக் கோர்ஸை நீங்கள் <b>முழுமையாக</b> முடிக்க வேண்டும்.  
+நீங்கள் பாதியிலேயே நிறுத்தி விட்டால், concept முழுமையாகப் புரியாது.  
+முழு பாடத்தையும் முடித்து விட்டால் மட்டுமே, நீங்கள் C++ இல் ஒரு நிபுணராக மாறுவீர்கள்! 💪
+    </div>
+
+    <div class="nav-btns">
+      <a href="#" class="btn">⬅ Back</a>
+      <a href="intro2.html" class="btn">Next ➡</a>
+    </div>
+  </main>
+
+  <script>
+    const sidebar=document.getElementById('sidebar');
+    const overlay=document.getElementById('overlay');
+    function toggleMenu(){
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+  </script>
+
+</body>
 </html>
