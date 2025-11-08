@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 5 - C++ Introduction Program</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:"Poppins",sans-serif;
+      background:#f9f9ff;
+      overflow-x:hidden;
+    }
+    header{
+      background:linear-gradient(90deg,#16a085,#1abc9c);
+      color:white;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 18px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:10;
+      height:65px;
+    }
+    .menu-icon{font-size:1.6rem;cursor:pointer;}
+    .title{font-weight:600;font-size:1.2rem;}
+    .sidebar{
+      position:fixed;
+      top:0;
+      left:-260px;
+      width:260px;
+      height:100%;
+      background:white;
+      box-shadow:2px 0 10px rgba(0,0,0,0.15);
+      transition:0.4s;
+      z-index:20;
+      padding-top:70px;
+      border-top-right-radius:15px;
+    }
+    .sidebar.active{left:0;}
+    .sidebar ul{list-style:none;}
+    .sidebar li{padding:12px 20px;border-bottom:1px solid #eee;}
+    .sidebar a{
+      text-decoration:none;
+      color:#333;
+      font-weight:500;
+      display:block;
+      transition:0.3s;
+    }
+    .sidebar a:hover{color:#1abc9c;transform:translateX(5px);}
+    .submenu{display:none;padding-left:15px;}
+    .submenu a{font-size:0.95rem;}
+    .open>.submenu{display:block;}
+    .overlay{
+      position:fixed;
+      top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.3);
+      opacity:0;
+      visibility:hidden;
+      transition:0.4s;
+      z-index:15;
+    }
+    .overlay.active{
+      opacity:1;
+      visibility:visible;
+    }
+    main{
+      margin-top:75px;
+      padding:25px 20px 40px 20px;
+      text-align:left;
+      max-width:750px;
+      margin-left:auto;
+      margin-right:auto;
+      transition:0.3s;
+    }
+    h2{color:#0078ff;margin-bottom:15px;}
+    h3{color:#16a085;margin-top:25px;margin-bottom:10px;}
+    p{color:#444;margin-bottom:20px;line-height:1.7;}
+    ul{margin-left:20px;margin-bottom:20px;}
+    .example-box{
+      background:#f3fff8;
+      border-left:5px solid #1abc9c;
+      padding:15px;
+      margin:20px 0;
+      font-family:monospace;
+      white-space:pre-wrap;
+      border-radius:8px;
+      box-shadow:0 1px 4px rgba(0,0,0,0.05);
+    }
+    .code-box{
+      background:#272822;
+      color:#f8f8f2;
+      border-radius:10px;
+      padding:15px;
+      margin:20px 0;
+      font-family:"Courier New",monospace;
+      overflow-x:auto;
+      box-shadow:0 2px 6px rgba(0,0,0,0.2);
+      line-height:1.6;
+    }
+    .output-box{
+      background:#fffbe6;
+      border-left:5px solid #f1c40f;
+      padding:15px;
+      font-family:monospace;
+      margin:15px 0;
+      border-radius:8px;
+      box-shadow:0 1px 4px rgba(0,0,0,0.1);
+    }
+    .nav-btns{
+      display:flex;
+      justify-content:space-between;
+      margin-top:30px;
+    }
+    .btn{
+      background:#1abc9c;
+      color:white;
+      padding:10px 18px;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+    .btn:hover{background:#16a085;}
+    @media (max-width:500px){
+      main{padding:15px 6px 30px 6px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    <span class="title">Lesson 5 - C++ Introduction Program</span>
+  </header>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li class="has-submenu">
+        <a href="#" onclick="toggleSubmenu(event)">▶ C++ அறிமுகம்</a>
+        <ul class="submenu">
+          <li><a href="lesson4.html">C++ என்றால் என்ன?</a></li>
+          <li><a href="lesson4.html">ஏன் C++ கற்றுக்கொள்ள வேண்டும்?</a></li>
+          <li><a href="lesson4.html">C++ வரலாறு</a></li>
+        </ul>
+      </li>
+      <li><a href="lesson5.html" style="color:#16a085;font-weight:bold;">Lesson 5 – Introduction Program</a></li>
+    </ul>
+  </div>
+
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+  <!-- Main Content -->
+  <main id="content">
+    <h2>Lesson 5: C++ Introduction Program</h2>
+    <p>இந்த பாடத்தில் நாம ஒரு சிம்பிள் C++ புரோகிராமை எழுதிப் பார்த்து, அதன் ஒவ்வொரு பகுதியையும் புரிந்து கொள்வோம்.  
+    இது தான் C++ உலகில் உன் முதல் அடிமை! 😎</p>
+
+    <h3>💻 Program:</h3>
+    <div class="code-box">
+#include &lt;iostream&gt;<br>
+using namespace std;<br><br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Hello, World! Welcome to C++ Programming!" &lt;&lt; endl;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}
+    </div>
+
+    <h3>🧠 Program Explanation:</h3>
+    <ul>
+      <li><b>#include &lt;iostream&gt;</b> — Input & Output (cin / cout) பயன்பாட்டிற்கான header file.</li>
+      <li><b>using namespace std;</b> — cout, cin போன்றவற்றை “std::” இல்லாமல் நேரடியாகப் பயன்படுத்த உதவுகிறது.</li>
+      <li><b>int main()</b> — Program execution இதிலிருந்து தொடங்குகிறது.</li>
+      <li><b>cout &lt;&lt;</b> — Output (வெளியீடு) காட்ட பயன்படும் statement.</li>
+      <li><b>return 0;</b> — Program வெற்றிகரமாக முடிந்தது என்பதை குறிக்கிறது.</li>
+    </ul>
+
+    <h3>🪄 Output:</h3>
+    <div class="output-box">
+Hello, World! Welcome to C++ Programming!
+    </div>
+
+    <div class="example-box">
+💡 குறிப்புகள்:  
+C++ program எழுதும் போது ஒவ்வொரு வரியும் ஒரு அர்த்தம் கொண்டது.  
+‘cout’ - என்பதில் உள்ள “<<” என்பது data-வை screen-ல் print செய்யும் operator ஆகும்.
+    </div>
+
+    <div class="nav-btns">
+      <a href="lesson4.html" class="btn">⬅ Previous Lesson</a>
+      <a href="#" class="btn">Next ➡</a>
+    </div>
+  </main>
+
+  <script>
+    const sidebar=document.getElementById('sidebar');
+    const overlay=document.getElementById('overlay');
+    function toggleMenu(){
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+    function toggleSubmenu(e){
+      e.preventDefault();
+      const parent=e.target.parentElement;
+      parent.classList.toggle('open');
+    }
+  </script>
+</body>
+  </html>
