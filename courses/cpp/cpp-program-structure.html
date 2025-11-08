@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ta">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>C++ அறிமுகம்</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 5 - C++ Introduction Program</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
     body{
@@ -71,12 +71,13 @@
       margin-top:75px;
       padding:25px 20px 40px 20px;
       text-align:left;
-      max-width:700px;
+      max-width:750px;
       margin-left:auto;
       margin-right:auto;
       transition:0.3s;
     }
     h2{color:#0078ff;margin-bottom:15px;}
+    h3{color:#16a085;margin-top:25px;margin-bottom:10px;}
     p{color:#444;margin-bottom:20px;line-height:1.7;}
     ul{margin-left:20px;margin-bottom:20px;}
     .example-box{
@@ -88,6 +89,26 @@
       white-space:pre-wrap;
       border-radius:8px;
       box-shadow:0 1px 4px rgba(0,0,0,0.05);
+    }
+    .code-box{
+      background:#272822;
+      color:#f8f8f2;
+      border-radius:10px;
+      padding:15px;
+      margin:20px 0;
+      font-family:"Courier New",monospace;
+      overflow-x:auto;
+      box-shadow:0 2px 6px rgba(0,0,0,0.2);
+      line-height:1.6;
+    }
+    .output-box{
+      background:#fffbe6;
+      border-left:5px solid #f1c40f;
+      padding:15px;
+      font-family:monospace;
+      margin:15px 0;
+      border-radius:8px;
+      box-shadow:0 1px 4px rgba(0,0,0,0.1);
     }
     .nav-btns{
       display:flex;
@@ -104,16 +125,17 @@
       transition:0.3s;
     }
     .btn:hover{background:#16a085;}
-    @media (max-width: 500px) {
+    @media (max-width:500px){
       main{padding:15px 6px 30px 6px;}
     }
   </style>
 </head>
 <body>
+
   <!-- Header -->
   <header>
     <span class="menu-icon" onclick="toggleMenu()">☰</span>
-    <span class="title">C++ அறிமுகம் (Introduction)</span>
+    <span class="title">Lesson 5 - C++ Introduction Program</span>
   </header>
 
   <!-- Sidebar -->
@@ -122,49 +144,62 @@
       <li class="has-submenu">
         <a href="#" onclick="toggleSubmenu(event)">▶ C++ அறிமுகம்</a>
         <ul class="submenu">
-          <li><a href="#" onclick="showLesson(1)">C++ என்றால் என்ன?</a></li>
-          <li><a href="#" onclick="showLesson(2)">ஏன் C++ கற்றுக்கொள்ள வேண்டும்?</a></li>
-          <li><a href="#" onclick="showLesson(3)">C++ வரலாறு</a></li>
+          <li><a href="lesson4.html">C++ என்றால் என்ன?</a></li>
+          <li><a href="lesson4.html">ஏன் C++ கற்றுக்கொள்ள வேண்டும்?</a></li>
+          <li><a href="lesson4.html">C++ வரலாறு</a></li>
         </ul>
       </li>
-      <!-- Separate item for C++ Introduction Program -->
-      <li>
-        <a href="cpp-program-structure.html">💻 C++ Introduction Program</a>
-      </li>
+      <li><a href="lesson5.html" style="color:#16a085;font-weight:bold;">Lesson 5 – Introduction Program</a></li>
     </ul>
   </div>
+
   <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
   <!-- Main Content -->
   <main id="content">
-    <h2>C++ என்றால் என்ன?</h2>
-    <p>
-      C++ என்பது ஒரு சக்திவாய்ந்த (Powerful) மற்றும் பல்துறை (Multi-purpose) Programming Language ஆகும்.  
-      இதை <b>Bjarne Stroustrup (பியார்ன் ஸ்ட்ராஸ்ட்ரப்)</b> என்ற விஞ்ஞானி 1980-களில் Bell Labs இல் உருவாக்கினார்.  
-      இது C மொழியின் மேம்பட்ட வடிவம் என்பதால் இதற்கு “C with Classes” என்றும் முதலில் பெயரிட்டனர்.
-    </p>
-    <p>
-      C++ இல் Object-Oriented Programming (பொருள் சார்ந்த நிரலாக்கம்) கொள்கைகள் உள்ளன —  
-      <b>classes (வகுப்புகள்), objects (பொருள்கள்), inheritance (பரம்பரை), polymorphism (பலவிதம்), encapsulation (மூடல்)</b> போன்றவை.  
-      இதனால் பெரிய அளவிலான software, games, மற்றும் operating systems உருவாக்குவது எளிதாகிறது.
-    </p>
+    <h2>Lesson 5: C++ Introduction Program</h2>
+    <p>இந்த பாடத்தில் நாம ஒரு சிம்பிள் C++ புரோகிராமை எழுதிப் பார்த்து, அதன் ஒவ்வொரு பகுதியையும் புரிந்து கொள்வோம்.  
+    இது தான் C++ உலகில் உன் முதல் அடிமை! 😎</p>
+
+    <h3>💻 Program:</h3>
+    <div class="code-box">
+#include &lt;iostream&gt;<br>
+using namespace std;<br><br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Hello, World! Welcome to C++ Programming!" &lt;&lt; endl;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}
+    </div>
+
+    <h3>🧠 Program Explanation:</h3>
+    <ul>
+      <li><b>#include &lt;iostream&gt;</b> — Input & Output (cin / cout) பயன்பாட்டிற்கான header file.</li>
+      <li><b>using namespace std;</b> — cout, cin போன்றவற்றை “std::” இல்லாமல் நேரடியாகப் பயன்படுத்த உதவுகிறது.</li>
+      <li><b>int main()</b> — Program execution இதிலிருந்து தொடங்குகிறது.</li>
+      <li><b>cout &lt;&lt;</b> — Output (வெளியீடு) காட்ட பயன்படும் statement.</li>
+      <li><b>return 0;</b> — Program வெற்றிகரமாக முடிந்தது என்பதை குறிக்கிறது.</li>
+    </ul>
+
+    <h3>🪄 Output:</h3>
+    <div class="output-box">
+Hello, World! Welcome to C++ Programming!
+    </div>
 
     <div class="example-box">
-💡 எடுத்துக்காட்டு:  
-Windows, Photoshop, Chrome, Unreal Engine போன்ற பெரிய software-கள் அனைத்தும்  
-C++ மூலமே உருவாக்கப்பட்டவை. இதன் சக்தி இதில்தான்! ⚙️
+💡 குறிப்புகள்:  
+C++ program எழுதும் போது ஒவ்வொரு வரியும் ஒரு அர்த்தம் கொண்டது.  
+‘cout’ - என்பதில் உள்ள “<<” என்பது data-வை screen-ல் print செய்யும் operator ஆகும்.
     </div>
+
     <div class="nav-btns">
-      <a href="#" class="btn" style="visibility:hidden;">⬅ Back</a>
-      <a href="#" class="btn" onclick="showLesson(2)">Next ➡</a>
+      <a href="lesson4.html" class="btn">⬅ Previous Lesson</a>
+      <a href="#" class="btn">Next ➡</a>
     </div>
   </main>
 
   <script>
     const sidebar=document.getElementById('sidebar');
     const overlay=document.getElementById('overlay');
-    const content=document.getElementById('content');
-
     function toggleMenu(){
       sidebar.classList.toggle('active');
       overlay.classList.toggle('active');
@@ -173,66 +208,6 @@ C++ மூலமே உருவாக்கப்பட்டவை. இதன�
       e.preventDefault();
       const parent=e.target.parentElement;
       parent.classList.toggle('open');
-    }
-
-    function showLesson(num){
-      let html="";
-      if(num===1){
-        html=`
-          <h2>C++ என்றால் என்ன?</h2>
-          <p>C++ என்பது ஒரு சக்திவாய்ந்த (Powerful) மற்றும் பல்துறை (Multi-purpose) Programming Language ஆகும்.  
-          இதை <b>Bjarne Stroustrup (பியார்ன் ஸ்ட்ராஸ்ட்ரப்)</b> என்ற விஞ்ஞானி 1980-களில் Bell Labs இல் உருவாக்கினார்.  
-          இது C மொழியின் மேம்பட்ட வடிவம் என்பதால் இதற்கு “C with Classes” என்றும் முதலில் பெயரிட்டனர்.</p>
-          <p>C++ இல் Object-Oriented Programming (பொருள் சார்ந்த நிரலாக்கம்) கொள்கைகள் உள்ளன —  
-          <b>classes (வகுப்புகள்), objects (பொருள்கள்), inheritance (பரம்பரை), polymorphism (பலவிதம்), encapsulation (மூடல்)</b> போன்றவை.  
-          இதனால் பெரிய அளவிலான software, games, மற்றும் operating systems உருவாக்குவது எளிதாகிறது.</p>
-          <div class="example-box">💡 எடுத்துக்காட்டு:  
-Windows, Photoshop, Chrome, Unreal Engine போன்ற பெரிய software-கள் அனைத்தும்  
-C++ மூலமே உருவாக்கப்பட்டவை. இதன் சக்தி இதில்தான்! ⚙️</div>
-          <div class="nav-btns">
-            <a href="#" class="btn" style="visibility:hidden;">⬅ Back</a>
-            <a href="#" class="btn" onclick="showLesson(2)">Next ➡</a>
-          </div>`;
-      } 
-      else if(num===2){
-        html=`
-          <h2>ஏன் C++ கற்றுக்கொள்ள வேண்டும்?</h2>
-          <p>C++ கற்றுக்கொள்ள பல முக்கியமான காரணங்கள் உள்ளன:</p>
-          <ul>
-            <li>இது <b>Fast and Efficient (வேகமான மற்றும் திறமையானது)</b> — programs மிக விரைவாக இயங்கும்.</li>
-            <li>இது <b>Object-Oriented (பொருள் சார்ந்தது)</b> — code modular ஆகவும், மீண்டும் பயன்படுத்தக்கூடியதாகவும் ஆக்கும்.</li>
-            <li><b>Game Development (விளையாட்டு உருவாக்கம்)</b>, <b>Operating System (செயல்முறை அமைப்பு)</b> ஆகிய துறைகளில் முக்கியம்.</li>
-            <li>பல பெரிய நிறுவனங்கள் (Microsoft, Adobe, Google, Apple) இன்னும் C++-ஐ core system development-க்கு பயன்படுத்துகின்றன.</li>
-          </ul>
-          <p>C++ கற்றுக்கொள்வது program எழுதும் நுணுக்கத்தையும், memory & performance பற்றிய புரிதலையும் மேம்படுத்தும்.</p>
-          <div class="example-box">💡 எடுத்துக்காட்டு:  
-Game Engines (Unreal Engine), 3D Software (Blender), Operating Systems (Windows, Linux) — அனைத்தும் C++-இல் எழுதப்பட்டவை.</div>
-          <div class="nav-btns">
-            <a href="#" class="btn" onclick="showLesson(1)">⬅ Back</a>
-            <a href="#" class="btn" onclick="showLesson(3)">Next ➡</a>
-          </div>`;
-      }
-      else if(num===3){
-        html=`
-          <h2>C++ வரலாறு (History of C++)</h2>
-          <p>C++ மொழி <b>1980-களின் தொடக்கத்தில்</b> <b>Bjarne Stroustrup</b> அவர்களால் உருவாக்கப்பட்டது.  
-          அவர் <b>Bell Laboratories (பேல் ஆய்வகத்தில்)</b> வேலை செய்தபோது, C மொழியில் <b>Object-Oriented</b> பண்புகளை சேர்க்க நினைத்தார்.</p>
-          <p>அந்த நேரத்தில் “<b>C with Classes</b>” எனப் பெயரிட்டு ஆரம்பித்தார்.  
-          பின்னர் அதில் classes, constructors, overloading போன்ற அம்சங்களைச் சேர்த்து, 1983-ல் “<b>C++</b>” என பெயர்மாற்றம் செய்யப்பட்டது.</p>
-          <p>‘++’ என்பது C மொழியின் increment operator — அதாவது “C”-யை ஒரு படி மேம்படுத்தியதாகும்.</p>
-          <p>பின்னர் C++ உலகளவில் பரவியதும், <b>ISO (International Standards Organization)</b> நிறுவனம்  
-          1998-ல் “C++98” எனும் முதல் அதிகாரப்பூர்வ standard வெளியிட்டது.</p>
-          <div class="example-box">📘 முக்கிய பதிப்புகள்:
-• C++98 – முதல் ISO Standard  
-• C++03 – சிறு திருத்தங்கள்  
-• C++11 – புதிய features (auto, lambda, smart pointers)  
-• C++14, C++17, C++20 – மேம்படுத்தப்பட்ட விதிமுறைகள் & திறன்</div>
-          <div class="nav-btns">
-            <a href="#" class="btn" onclick="showLesson(2)">⬅ Back</a>
-            <a href="cpp-program-structure.html" class="btn">Next ➡</a>
-          </div>`;
-      }
-      content.innerHTML=html;
     }
   </script>
 </body>
