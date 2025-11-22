@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kalvi Vaanam</title>
-
   <!-- ✅ SEO Tamil + English Optimized Meta Tags -->
   <meta name="description" content="Kalvi Vaanam – இலவச கல்வி, அறிவு, தொழில்நுட்பம், அறிவியல், கணினி, கோடிங், மற்றும் பல பாடங்களை தமிழில் கற்றுக்கொள்ள உதவும் சிறந்த கல்வி தளம். 
   Kalvi Vaanam is a Tamil educational platform offering free lessons, science, coding, and technology in Tamil for all learners.">
@@ -16,185 +15,39 @@
   <meta property="og:image" content="https://kalvivaanam.in/images/og-image.jpg">
   <meta property="og:url" content="https://kalvivaanam.in">
   <meta name="twitter:card" content="summary_large_image">
-
   <style>
-    :root {
-      --accent: #009dff;
-      --white: #ffffff;
-      --text: #222;
-      --sky-light: #e0f7ff;
-    }
-
+    /* styles same as your original code -- untouched */
+    :root { --accent: #009dff; --white: #ffffff; --text: #222; --sky-light: #e0f7ff; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--sky-light);
-      font-family: "Poppins", Arial, Helvetica, sans-serif;
-      color: var(--text);
-    }
-
-    header {
-      height: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      border-bottom: 2px solid rgba(0, 157, 255, 0.4);
-      background: var(--white);
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-    }
-
-    .sitename {
-      font-size: 30px;
-      font-weight: 900;
-      color: var(--accent);
-      letter-spacing: 1px;
-      text-align: center;
-      line-height: 1.2;
-    }
-
-    .subtitle {
-      font-size: 13px;
-      color: #333;
-      margin-bottom: 4px;
-      text-align: center;
-    }
-
-    .menu-icon {
-      position: absolute;
-      right: 18px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 28px;
-      cursor: pointer;
-      color: var(--accent);
-      user-select: none;
-    }
-
-    .side-overlay {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: var(--white);
-      z-index: 9999;
-      transition: left 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      padding: 28px;
-      box-shadow: inset 0 0 15px rgba(0, 157, 255, 0.1);
-    }
-
+    body { background: var(--sky-light); font-family: "Poppins", Arial, Helvetica, sans-serif; color: var(--text); }
+    header {height: 90px; display: flex; align-items: center; justify-content: center; position: relative; border-bottom: 2px solid rgba(0, 157, 255, 0.4); background: var(--white); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);}
+    .sitename { font-size: 30px; font-weight: 900; color: var(--accent); letter-spacing: 1px; text-align: center; line-height: 1.2;}
+    .subtitle {font-size: 13px; color: #333; margin-bottom: 4px; text-align: center;}
+    .menu-icon { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-size: 28px; cursor: pointer; color: var(--accent); user-select: none;}
+    .side-overlay { position: fixed; top: 0; left: -100%; width: 100%; height: 100%; background: var(--white); z-index: 9999; transition: left 0.3s ease; display: flex; flex-direction: column; padding: 28px; box-shadow: inset 0 0 15px rgba(0, 157, 255, 0.1);}
     .side-overlay.open { left: 0; }
-
-    .side-close {
-      align-self: flex-end;
-      font-size: 28px;
-      cursor: pointer;
-      color: var(--accent);
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-
-    .side-list {
-      margin-top: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .side-list a {
-      text-decoration: none;
-      color: var(--text);
-      font-size: 22px;
-      font-weight: 600;
-      padding: 10px 30px;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-
-    .side-list a:hover {
-      background: rgba(0, 157, 255, 0.1);
-      color: var(--accent);
-    }
-
-    .header-underline {
-      position: absolute;
-      bottom: 8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 4px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-
-    main { min-height: calc(100vh - 90px); }
-
-    footer {
-      background: linear-gradient(90deg, #00b4d8, #90e0ef);
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      margin-top: 40px;
-      font-family: 'Poppins', sans-serif;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-      box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    footer a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: 500;
-    }
-
-    footer a:hover { text-decoration: underline; }
-
-    /* ✅ Classes Popup Style */
-    #classBox {
-      display:none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 85%;
-      max-width: 600px;
-      height: 420px;
-      background: white;
-      border-radius: 18px;
-      box-shadow: 0 4px 25px rgba(0,0,0,0.3);
-      z-index: 10000;
-      padding: 25px;
-      text-align: center;
-      overflow-y: auto;
-      animation: pop 0.4s ease;
-    }
-
-    @keyframes pop {
-      from { transform: translate(-50%, -45%) scale(0.8); opacity: 0; }
-      to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-    }
-
-    #classBox button {
-      border: none;
-      border-radius: 10px;
-      background: #e0f7ff;
-      font-size: 18px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    #classBox button:hover {
-      background: #009dff;
-      color: white;
-    }
+    .side-close { align-self: flex-end; font-size: 28px; cursor: pointer; color: var(--accent); margin-bottom: 8px; font-weight: bold;}
+    .side-list { margin-top: 40px; display: flex; flex-direction: column; gap: 20px; align-items: center;}
+    .side-list a { text-decoration: none; color: var(--text); font-size: 22px; font-weight: 600; padding: 10px 30px; border-radius: 8px; transition: background 0.3s;}
+    .side-list a:hover { background: rgba(0, 157, 255, 0.1); color: var(--accent);}
+    .header-underline { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 120px; height: 4px; background: var(--accent); border-radius: 2px;}
+    main { min-height: calc(100vh - 90px);}
+    footer { background: linear-gradient(90deg, #00b4d8, #90e0ef); color: white; padding: 20px 0; text-align: center; margin-top: 40px; font-family: 'Poppins', sans-serif; border-top-left-radius: 15px; border-top-right-radius: 15px; box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15);}
+    footer a { color: white; text-decoration: none; margin: 0 10px; font-weight: 500;}
+    footer a:hover { text-decoration: underline;}
+    #classBox { display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 85%; max-width: 600px; height: 420px; background: white; border-radius: 18px; box-shadow: 0 4px 25px rgba(0,0,0,0.3); z-index: 10000; padding: 25px; text-align: center; overflow-y: auto; animation: pop 0.4s ease;}
+    @keyframes pop { from { transform: translate(-50%, -45%) scale(0.8); opacity: 0; } to { transform: translate(-50%, -50%) scale(1); opacity: 1; }}
+    #classBox button { border: none; border-radius: 10px; background: #e0f7ff; font-size: 18px; cursor: pointer; transition: 0.2s;}
+    #classBox button:hover { background: #009dff; color: white;}
+    .search-area { width: 100%; background: transparent; padding: 18px 15px; text-align: center; margin-top: 18px;}
+    .search-box { width: 90%; max-width: 460px; height: 44px; padding: 10px 14px; font-size: 16px; border: 2px solid var(--accent); border-radius: 10px; outline: none; text-align: left;}
+    #resultBox { margin-top: 14px; padding: 14px; width: 92%; max-width: 680px; background: #ffffff; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); display: none; margin-left: auto; margin-right: auto; text-align: left;}
+    .res-title { font-size: 18px; font-weight: 700; color: var(--accent); margin-bottom: 8px;}
+    .res-keywords { font-size: 14px; color: #444; margin-bottom: 10px;}
+    .download-btn { display: inline-block; padding: 9px 16px; background: var(--accent); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600;}
+    .no-result { color: #666; font-size: 15px;}
   </style>
 </head>
-
 <body>
   <header>
     <div>
@@ -204,10 +57,13 @@
     <div class="menu-icon" id="menuBtn">三</div>
     <div class="header-underline"></div>
   </header>
-
-  <main></main>
-
-  <!-- ✅ Side Menu -->
+  <main>
+    <div class="search-area" aria-label="PDF Search">
+      <input id="searchInput" class="search-box" type="text"
+             placeholder="Search PDFs... (Eg: 11th Computer Science)" aria-label="Search PDFs" />
+      <div id="resultBox" role="region" aria-live="polite"></div>
+    </div>
+  </main>
   <aside class="side-overlay" id="sideOverlay">
     <div class="side-close" id="sideClose">×</div>
     <nav class="side-list">
@@ -221,8 +77,6 @@
       <a href="terms.html">Terms & Conditions</a>
     </nav>
   </aside>
-
-  <!-- ✅ Classes Popup Box -->
   <div id="classBox">
     <button onclick="closeClassBox()" style="
       float:right;
@@ -241,7 +95,6 @@
       <button onclick="openClass('Programming.html')" style="padding:15px;">Programming</button>
     </div>
   </div>
-
   <footer>
     <p style="margin: 0; font-weight: 500;">© 2025 Kalvi Vaanam</p>
     <p style="margin: 10px 0;">
@@ -253,12 +106,10 @@
       <a href="privacy.html">Privacy Policy</a>
     </p>
   </footer>
-
-  <script>
+<script>
     const menuBtn = document.getElementById("menuBtn");
     const side = document.getElementById("sideOverlay");
     const sideClose = document.getElementById("sideClose");
-
     menuBtn.addEventListener("click", () => side.classList.add("open"));
     sideClose.addEventListener("click", () => side.classList.remove("open"));
     side.addEventListener("click", (e) => {
@@ -267,7 +118,6 @@
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") side.classList.remove("open");
     });
-
     function openClassBox() {
       document.getElementById("classBox").style.display = "block";
     }
@@ -277,6 +127,110 @@
     function openClass(page) {
       window.location.href = page;
     }
-  </script>
+
+    // ====== BELOW: CHANGED SEARCH LOGIC AS YOU REQUESTED ======
+    const pdfData = [
+      {
+        title: "11th Second Midterm Computer Science Question Paper 2025",
+        keywords: ["11th", "computer science", "computer", "cs", "second midterm", "midterm", "11th computer science"],
+        link: "https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_second%20midterm%20computer%20science%20examination-2025.pdf"
+      },
+      {
+        title: "11th Second Midterm Chemistry Examination 2025",
+        keywords: ["11th", "chemistry", "chemi", "chem", "chemistry question paper"],
+        link: "https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_second%20midterm%20chemistry%20examination%20-2025.pdf"
+      },
+      {
+        title: "11th Second Midterm Physics Examination 2025",
+        keywords: ["11th", "physics", "phy", "physics question paper"],
+        link: "https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_second%20midterm%20physics%20examination%20-2025.pdf"
+      },
+      {
+        title: "11th Second Midterm Mathematics Examination 2025",
+        keywords: ["11th", "mathematics", "maths", "math", "11th maths"],
+        link: "https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_second%20midterm%20maths%20examination_2025.pdf"
+      },
+      {
+        title: "11th Second Midterm English Examination 2025",
+        keywords: ["11th", "english", "eng", "english question paper"],
+        link: "https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_second%20midterm%20English%20examination-2025.pdf"
+      },
+      {
+        title: "11th Second Midterm Tamil Examination 2025",
+        keywords: ["11th", "tamil", "தமிழ்", "tamil question paper"],
+        link: "https://github.com/ttnswamidayananda1947-ops/KalviVaanam-PDFs/raw/refs/heads/main/11th/Computer_Science_Group/Computer_Science/Question_Paper/11th_second%20midterm%20Tamil%20examination%20-2025.pdf"
+      }
+    ];
+
+    const rotating = ["Search here", "Ask here", "Find PDF", "Learn Anything"];
+    let rIndex = 0;
+    const searchInput = document.getElementById("searchInput");
+    setInterval(() => {
+      if (searchInput) {
+        searchInput.placeholder = rotating[rIndex];
+        rIndex = (rIndex + 1) % rotating.length;
+      }
+    }, 3000);
+
+    const resultBox = document.getElementById("resultBox");
+
+    function normalizeText(t) {
+      return t.toString().toLowerCase().trim();
+    }
+    function escapeHtml(unsafe) {
+      return unsafe.replace(/[&<"'>]/g, function (m) {
+        return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' })[m];
+      });
+    }
+
+    // ** SHOW LIST OF ALL PDFS MATCHED **
+    function showResults(items) {
+      resultBox.style.display = "block";
+      if (!items || items.length === 0) {
+        resultBox.innerHTML = `<div class="no-result">No results found</div>`;
+        return;
+      }
+      resultBox.innerHTML = items.map(item => `
+        <div style="margin-bottom:18px;">
+          <div class="res-title">${escapeHtml(item.title)}</div>
+          <a class="download-btn" href="${item.link}" onclick="triggerDownload(event, '${item.link}')">📥 Download</a>
+        </div>
+      `).join('');
+    }
+
+    searchInput.addEventListener("input", function () {
+      const q = normalizeText(this.value);
+      if (q.length === 0) {
+        resultBox.style.display = "none";
+        resultBox.innerHTML = "";
+        return;
+      }
+      const foundItems = pdfData.filter(p => {
+        if (normalizeText(p.title).includes(q)) return true;
+        for (let k of p.keywords) {
+          if (normalizeText(k).includes(q) || q.includes(normalizeText(k))) return true;
+        }
+        return false;
+      });
+      showResults(foundItems);
+    });
+
+    searchInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        // Don't auto-download, only show list!
+      }
+    });
+
+    function triggerDownload(e, url) {
+      if (e) e.preventDefault();
+      const a = document.createElement('a');
+      a.href = url;
+      a.setAttribute('download', '');
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
+    resultBox.style.display = "none";
+</script>
 </body>
 </html>
